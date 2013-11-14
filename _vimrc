@@ -1,9 +1,23 @@
- 
+let s:running_windows = has("win16") || has("win32") || has("win64")
+if s:running_windows
+	set backupdir=~/_vim/backup
+	" set undodir=~/_vim/undo
+	set directory=~/_vim//tmp
+else
+	set backupdir=~/.vim/backup
+	" set undodir=~/.vim/undo
+	set directory=~/.vim/tmp
+endif
+
 filetype off
 filetype plugin indent off
  
 "quickrun
-set runtimepath+=$HOME/.vim/vim-quickrun
+if s:running_windows
+  set runtimepath+=$HOME/_vim/vim-quickrun
+else
+  set runtimepath+=~/.vim/vim-quickrun
+endif
 let g:quickrun_config={'*': {'split': ':botright 4sp'}}
 let g:quickrun_config.go={'command': 'go', 'exec': ['go test']}
  
@@ -23,6 +37,7 @@ for path in split($GOPATH, ':')
   exe "set runtimepath+=" . globpath(path, "src/github.com/golang/lint/misc/vim")
 endfor
 auto BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+auto FileType go set errorformat=%*[0-9/]\ %*[0-9:]\ Failed\ parsing\ %f:\ %l:%c:\ %m,%f:%l:%c:\ %m,%f:%l:\ %m
    
 filetype plugin indent on
 syntax on
