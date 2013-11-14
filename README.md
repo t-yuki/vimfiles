@@ -28,15 +28,15 @@ Before setup, you should install Go and set GOPATH env.
 
 ```shell
 git clone https://github.com/t-yuki/vimfiles ~/vimfiles
-mkdir -p vimfiles/_vim
-ln -s vimfiles/_vim ~/.vim
-ln -s vimfiles/_vimrc ~/.vimrc
+mkdir -p ~/vimfiles/_vim
+ln -s ~/vimfiles/_vim ~/.vim
+ln -s ~/vimfiles/_vimrc ~/.vimrc
 mkdir -p ~/.vim/{backup,undo,tmp}
 go get -u github.com/nsf/gocode
 go get -u github.com/golang/lint/...
 go get -u code.google.com/p/go.tools/cmd/oracle
 
-mkdir -p ~/.vim/autoload ~/.vim/bundle;
+mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 git clone https://github.com/thinca/vim-quickrun ~/.vim/bundle/vim-quickrun
 git clone https://github.com/scrooloose/syntastic.git ~/.vim/bundle/syntastic

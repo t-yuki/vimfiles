@@ -2,7 +2,7 @@ let s:running_windows = has("win16") || has("win32") || has("win64")
 if s:running_windows
 	set backupdir=~/_vim/backup
 	" set undodir=~/_vim/undo
-	set directory=~/_vim//tmp
+	set directory=~/_vim/tmp
 else
 	set backupdir=~/.vim/backup
 	" set undodir=~/.vim/undo
