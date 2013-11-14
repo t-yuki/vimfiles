@@ -22,6 +22,11 @@ set runtimepath+=$GOROOT/misc/vim
 auto BufWritePre *.go Fmt
 auto FileType go set makeprg=go\ test\ ./... errorformat=%f:%l:\ %m
 autocmd QuickfixCmdPost make copen
+
+"oracle
+for path in split($GOPATH, ':')
+  exe "source " . globpath(path, "src/code.google.com/p/go.tools/cmd/oracle/oracle.vim")
+endfor
   
 "gocode
 for path in split($GOPATH, ':')

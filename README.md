@@ -6,10 +6,18 @@ Usage
 * :Lint -> execute golint
 * :Fmt -> execute gofmt
 * :Import xxx -> add import declaration xxx
-* :Errors -> show error window (need save)
 * :w -> save file and execute gofmt and golint
 * \r -> do quickrun. to close, type :on or :only
 * <C-X><C-O> -> autocomple by gocode
+
+### Experimental
+* :Errors -> show error window (need save)
+* :GoOracleDescribe -> Describe the expression at the current point.
+* :GoOracleCallees -> Show possible callees of the function call at the current point.
+* :GoOracleCallers -> Show the set of callers of the function containing the current point.
+* :GoOracleCallgraph -> Show the callgraph of the current program.
+* :GoOracleImplements -> Describe the 'implements' relation for types in the package containing the current point.
+* :GoOracleChannelPeers -> Enumerate the set of possible corresponding sends/receives for this channel receive/send operation.
 
 Setup
 -----
@@ -26,6 +34,7 @@ ln -s vimfiles/_vimrc ~/.vimrc
 mkdir -p ~/.vim/{backup,undo,tmp}
 go get -u github.com/nsf/gocode
 go get -u github.com/golang/lint/...
+go get -u code.google.com/p/go.tools/cmd/oracle
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle;
 curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
