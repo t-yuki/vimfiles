@@ -13,11 +13,7 @@ filetype off
 filetype plugin indent off
  
 "quickrun
-if s:running_windows
-  set runtimepath+=$HOME/_vim/vim-quickrun
-else
-  set runtimepath+=~/.vim/vim-quickrun
-endif
+execute pathogen#infect()
 let g:quickrun_config={'*': {'split': ':botright 4sp'}}
 let g:quickrun_config.go={'command': 'go', 'exec': ['go test']}
  
