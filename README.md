@@ -28,6 +28,7 @@ Before setup, you should install Go and set GOPATH env.
 
 ```shell
 git clone https://github.com/t-yuki/vimfiles ~/vimfiles
+cd ~/vimfiles && git submodule update --init
 mkdir -p ~/vimfiles/_vim
 ln -s ~/vimfiles/_vim ~/.vim
 ln -s ~/vimfiles/_vimrc ~/.vimrc
@@ -38,8 +39,6 @@ go get -u code.google.com/p/go.tools/cmd/oracle
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-git clone https://github.com/thinca/vim-quickrun ~/.vim/bundle/vim-quickrun
-git clone https://github.com/scrooloose/syntastic.git ~/.vim/bundle/syntastic
 ```
 
 ### Windows

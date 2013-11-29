@@ -1,0 +1,9 @@
+[submodule "_vim/bundle/vim-quickrun"]
+	path = _vim/bundle/vim-quickrun
+	url = https://github.com/thinca/vim-quickrun
+[submodule "_vim/bundle/CamelCaseMotion"]
+	path = _vim/bundle/CamelCaseMotion
+	url = https://github.com/bkad/CamelCaseMotion.git
+[submodule "_vim/bundle/syntastic"]
+	path = _vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git

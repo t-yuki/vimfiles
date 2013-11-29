@@ -9,11 +9,21 @@ else
 	set directory=~/.vim/tmp
 endif
 
+"pathogen
+execute pathogen#infect()
+
 filetype off
 filetype plugin indent off
+
+"CamelCaseMotion
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+sunmap w
+sunmap b
+sunmap e
  
 "quickrun
-execute pathogen#infect()
 let g:quickrun_config={'*': {'split': ':botright 4sp'}}
 let g:quickrun_config.go={'command': 'go', 'exec': ['go test']}
  
@@ -24,10 +34,10 @@ auto FileType go set makeprg=go\ test\ ./... errorformat=%f:%l:\ %m
 autocmd QuickfixCmdPost make copen
 
 "oracle
-for path in split($GOPATH, ':')
-  exe "source " . globpath(path, "src/code.google.com/p/go.tools/cmd/oracle/oracle.vim")
-endfor
-  
+"for path in split($GOPATH, ':')
+"  exe "source " . globpath(path, "src/code.google.com/p/go.tools/cmd/oracle/oracle.vim")
+"endfor
+
 "gocode
 for path in split($GOPATH, ':')
   exe "set runtimepath+=" . globpath(path, "src/github.com/nsf/gocode/vim")
