@@ -6,6 +6,8 @@ Usage
 * :Lint -> execute golint
 * :Fmt -> execute gofmt
 * :Import xxx -> add import declaration xxx
+* :ImportAs yy xxx -> add import declaration xxx as yy
+* :Drop xxx -> drop import declaration xxx
 * :w -> save file and execute gofmt and golint
 * \r -> do quickrun. to close, type :on or :only
 * <C-X><C-O> -> autocomple by gocode
