@@ -30,11 +30,14 @@ let g:quickrun_config.go={'command': 'go', 'exec': ['go test']}
 "misc/vim
 set runtimepath+=$GOROOT/misc/vim
 auto BufWritePre *.go Fmt
-auto FileType go set makeprg=go\ test\ ./... errorformat=%f:%l:\ %m
+auto FileType go set makeprg=go\ test\ ./...
 autocmd QuickfixCmdPost make copen
 
 "goimports
 let g:gofmt_command = "goimports"
+
+"godef
+let g:godef_same_file_in_same_window=1
  
 "oracle
 "for path in split($GOPATH, ':')
@@ -51,7 +54,7 @@ for path in split($GOPATH, ':')
   exe "set runtimepath+=" . globpath(path, "src/github.com/golang/lint/misc/vim")
 endfor
 auto BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
-auto FileType go set errorformat=%*[0-9/]\ %*[0-9:]\ Failed\ parsing\ %f:\ %l:%c:\ %m,%f:%l:%c:\ %m,%f:%l:\ %m
+auto FileType go let &errorformat = '%*[0-9/]\ %*[0-9:]\ Failed\ parsing\ %f:\ %l:%c:\ %m,' . &errorformat
    
 filetype plugin indent on
 syntax on

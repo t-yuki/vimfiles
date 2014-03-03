@@ -40,6 +40,7 @@ go get -u -v github.com/nsf/gocode
 go get -u -v github.com/golang/lint/...
 go get -u -v code.google.com/p/go.tools/cmd/oracle
 go get -u -v code.google.com/p/go.tools/cmd/goimports
+go get -u -v code.google.com/p/rog-go/exp/cmd/godef
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
