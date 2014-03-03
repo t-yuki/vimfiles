@@ -22,7 +22,7 @@ map <silent> e <Plug>CamelCaseMotion_e
 sunmap w
 sunmap b
 sunmap e
- 
+
 "quickrun
 let g:quickrun_config={'*': {'split': ':botright 4sp'}}
 let g:quickrun_config.go={'command': 'go', 'exec': ['go test']}
@@ -33,6 +33,9 @@ auto BufWritePre *.go Fmt
 auto FileType go set makeprg=go\ test\ ./... errorformat=%f:%l:\ %m
 autocmd QuickfixCmdPost make copen
 
+"goimports
+let g:gofmt_command = "goimports"
+ 
 "oracle
 "for path in split($GOPATH, ':')
 "  exe "source " . globpath(path, "src/code.google.com/p/go.tools/cmd/oracle/oracle.vim")

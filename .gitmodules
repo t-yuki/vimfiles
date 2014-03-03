@@ -7,3 +7,6 @@
 [submodule "_vim/bundle/syntastic"]
 	path = _vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "_vim/bundle/vim-godef"]
+	path = _vim/bundle/vim-godef
+	url = https://github.com/dgryski/vim-godef

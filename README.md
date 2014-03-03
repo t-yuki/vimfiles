@@ -11,6 +11,7 @@ Usage
 * :w -> save file and execute gofmt and golint
 * \r -> do quickrun. to close, type :on or :only
 * <C-X><C-O> -> autocomple by gocode
+* :Godef -> show godef
 
 ### Experimental
 * :Errors -> show error window (need save)
@@ -35,9 +36,10 @@ mkdir -p ~/vimfiles/_vim
 ln -s ~/vimfiles/_vim ~/.vim
 ln -s ~/vimfiles/_vimrc ~/.vimrc
 mkdir -p ~/.vim/{backup,undo,tmp}
-go get -u github.com/nsf/gocode
-go get -u github.com/golang/lint/...
-go get -u code.google.com/p/go.tools/cmd/oracle
+go get -u -v github.com/nsf/gocode
+go get -u -v github.com/golang/lint/...
+go get -u -v code.google.com/p/go.tools/cmd/oracle
+go get -u -v code.google.com/p/go.tools/cmd/goimports
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
