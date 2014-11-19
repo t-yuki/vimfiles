@@ -1,51 +1,72 @@
-My vimrc on Windows and Linux for golang
-========================================
+My vimrc on Linux for golang
+============================
 
 Usage
 -----
-* :Lint -> execute golint
-* :Fmt -> execute gofmt
-* :Import xxx -> add import declaration xxx
-* :ImportAs yy xxx -> add import declaration xxx as yy
-* :Drop xxx -> drop import declaration xxx
-* :w -> save file and execute gofmt and golint
-* \r -> do quickrun. to close, type :on or :only
-* <C-X><C-O> -> autocomple by gocode
-* :Godef -> show godef
+| Command            | Description                                    |
+|--------------------|------------------------------------------------|
+| :w                 | save file and execute gofmt and golint         |
+| <C-P> (insert-mode)| autocomple by gocode                           |
+| <F8>               | open tagbar                                    |
+| gd                 | godef code jump on split window                |
+| gl                 | list files those depend on the current package |
+| gL                 | list dependencies of the current package       |
+| gr                 | `gorename` the identifier under cursor         |
+| gs                 | show interfaces implemented by the type        |
+| dc                 | show godoc under cursor                        |
+| \v                 | quickrun `go vet`. type :on to close           |
+| ------------------ | ---------------------------------------------- |
+| \dt                | godef code jump on another tab                 |
+| \e                 | `gorename` the identifier under cursor         |
+| \r                 | quickrun `go run`. type :on to close           |
+| \t                 | quickrun `go test`. type :on to close          |
+| \s                 | show interfaces implemented by the type        |
+| \i                 | show type info under cursor                    |
+| \gd                | show godoc under cursor                        |
+| :help vim-go       | show help of vim-go                            |
+| :help go-commands  | show help of vim-go                            |
+| :help go-mappings  | show help of vim-go                            |
+| :help go-settings  | show help of vim-go                            |
 
-### Experimental
-* :Errors -> show error window (need save)
-* :GoOracleDescribe -> Describe the expression at the current point.
-* :GoOracleCallees -> Show possible callees of the function call at the current point.
-* :GoOracleCallers -> Show the set of callers of the function containing the current point.
-* :GoOracleCallgraph -> Show the callgraph of the current program.
-* :GoOracleImplements -> Describe the 'implements' relation for types in the package containing the current point.
-* :GoOracleChannelPeers -> Enumerate the set of possible corresponding sends/receives for this channel receive/send operation.
+For more details: see https://github.com/fatih/vim-go/blob/master/doc/vim-go.txt
+
+| Command (:help go-commands for full help) | Description       |
+|--------------------|------------------------------------------|
+| :GoImport xxx      | add import declaration xxx               |
+| :GoImportAs yy xxx | add import declaration xxx as yy         |
+| :GoLint            | execute golint                           |
+| :GoFmt             | execute gofmt                            |
+| :GoImprots         | execute goimports                        |
+| :GoDrop xxx        | drop import declaration xxx              |
+| :GoDoc xxx         | open godoc xxx                           |
+| :GoVet             | run go vet                               |
+| :Godef             | show godef                               |
 
 Setup
 -----
-Setup note for Go 1.2rc3.
+Setup note for Go 1.4beta1
 Before setup, you should install Go and set GOPATH env.
 
 ### Linux
 
 ```shell
+(command -v yum && sudo -E yum install ctags) || sudo -E apt-get install ctags
+
 git clone https://github.com/t-yuki/vimfiles ~/vimfiles
-cd ~/vimfiles && git submodule update --init
+(cd ~/vimfiles && git submodule update --init)
 mkdir -p ~/vimfiles/_vim
 ln -s ~/vimfiles/_vim ~/.vim
 ln -s ~/vimfiles/_vimrc ~/.vimrc
-mkdir -p ~/.vim/{backup,undo,tmp}
-go get -u -v github.com/nsf/gocode
-go get -u -v github.com/golang/lint/...
-go get -u -v code.google.com/p/go.tools/cmd/oracle
-go get -u -v code.google.com/p/go.tools/cmd/goimports
-go get -u -v code.google.com/p/rog-go/exp/cmd/godef
-
+mkdir -p ~/.vim/{backup,tmp}
 mkdir -p ~/.vim/autoload ~/.vim/bundle
-curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+vim +PluginInstall +qall
+vim +"set filetype=go" +GoInstallBinaries +qall
+## for update:
+# vim +PluginUpdate +"set filetype=go" +GoUpdateBinaries +GoUpdateBinaries +qall
 ```
 
+OBSOLUTED NOTE
+---
 ### Windows
 
 ```shell
