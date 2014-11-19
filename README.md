@@ -5,24 +5,24 @@ Usage
 -----
 | Command            | Description                                    |
 |--------------------|------------------------------------------------|
-| :w                 | save file and execute gofmt and golint         |
-| <C-P> (insert-mode)| autocomple by gocode                           |
-| <F8>               | open tagbar                                    |
-| gd                 | godef code jump on split window                |
-| gl                 | list files those depend on the current package |
-| gL                 | list dependencies of the current package       |
-| gr                 | `gorename` the identifier under cursor         |
-| gs                 | show interfaces implemented by the type        |
-| dc                 | show godoc under cursor                        |
-| \v                 | quickrun `go vet`. type :on to close           |
+| `:w`               | save file and execute goimports                |
+| `<C-P>`            | **autocomple** by gocode on insert-mode        |
+| `<F8>`             | **open tagbar**                                |
+| `gd`               | godef **code jump** on split window            |
+| `gl`               | list files those depend on the current package |
+| `gL`               | **list dependencies** of the current package   |
+| `gr`               | **refactor the identifier** under cursor       |
+| `gs`               | **list implemented interfaces** by the type    |
+| `dc`               | **show godoc** under cursor                    |
+| `\v`               | quickrun `go vet`. type :on to close           |
 | ------------------ | ---------------------------------------------- |
-| \dt                | godef code jump on another tab                 |
-| \e                 | `gorename` the identifier under cursor         |
-| \r                 | quickrun `go run`. type :on to close           |
-| \t                 | quickrun `go test`. type :on to close          |
-| \s                 | show interfaces implemented by the type        |
-| \i                 | show type info under cursor                    |
-| \gd                | show godoc under cursor                        |
+| `\dt`              | godef code jump on another tab                 |
+| `\e`               | refactor the identifier by `gorename`          |
+| `\r`               | quickrun `go run`. type :on to close           |
+| `\t`               | quickrun `go test`. type :on to close          |
+| `\s`               | show interfaces implemented by the type        |
+| `\i`               | show type info under cursor                    |
+| `\gd`              | show godoc under cursor                        |
 | :help vim-go       | show help of vim-go                            |
 | :help go-commands  | show help of vim-go                            |
 | :help go-mappings  | show help of vim-go                            |
