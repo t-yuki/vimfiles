@@ -12,6 +12,8 @@ endif
 filetype off
 filetype plugin indent off
 
+set rtp+=~/.vim/bundle/vim-go-coverlay
+
 """""""
 "vundle
 set rtp+=~/.vim/bundle/vundle
@@ -25,6 +27,7 @@ Plugin 'bkad/CamelCaseMotion'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'thinca/vim-quickrun'
+Plugin 'tyuki/vim-go-coverlay'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
@@ -62,11 +65,15 @@ au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 "au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
+"au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+
+""vim-go-coverlay
+au FileType go nmap <leader>c <Plug>(go-coverlay)
+au FileType go nmap <leader>C <Plug>(go-clearlay)
    
 """customized key bindings
 "let mapleader = ","
