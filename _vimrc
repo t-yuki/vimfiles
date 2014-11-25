@@ -27,7 +27,7 @@ Plugin 'bkad/CamelCaseMotion'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'thinca/vim-quickrun'
-Plugin 'tyuki/vim-go-coverlay'
+Plugin 't-yuki/vim-go-coverlay'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
