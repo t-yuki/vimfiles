@@ -62,7 +62,7 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle
 vim +PluginInstall +qall
 vim +"set filetype=go" +GoInstallBinaries +qall
 ## for update:
-# vim +PluginUpdate +"set filetype=go" +GoUpdateBinaries +GoUpdateBinaries +qall
+# vim +PluginUpdate +"set filetype=go" +GoUpdateBinaries +qall
 ```
 
 OBSOLUTED NOTE
