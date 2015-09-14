@@ -28,6 +28,10 @@ Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'thinca/vim-quickrun'
 Plugin 't-yuki/vim-go-coverlay'
+Plugin 'mattn/emmet-vim'
+Plugin 'tpope/vim-surround'
+Plugin 'othree/html5.vim'
+Plugin 'pangloss/vim-javascript'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
@@ -101,6 +105,12 @@ sunmap e
 ""tagbar
 nmap <F8> :TagbarToggle<CR>
 
+"html
+au FileType html setl sw=2 sts=2 et
+
+"js
+au FileType javascript setl sw=2 sts=2 et
+
 filetype plugin indent on
 syntax on
 
@@ -116,3 +126,26 @@ function s:QuickRun_Exit_OnlyWindow()
   endif
 endfunction
 autocmd WinEnter * call s:QuickRun_Exit_OnlyWindow()
+
+""emmet https://gist.github.com/alpaca-tc/6879605
+let g:user_emmet_mode = 'iv'
+let g:user_emmet_leader_key = '<C-Y>'
+let g:use_emmet_complete_tag = 1
+let g:user_emmet_settings = {
+      \ 'lang' : 'ja',
+      \ 'html' : {
+      \   'filters' : 'html',
+      \ },
+      \ 'css' : {
+      \   'filters' : 'fc',
+      \ },
+      \ 'php' : {
+      \   'extends' : 'html',
+      \   'filters' : 'html',
+      \ },
+      \}
+augroup EmmitVim
+  autocmd!
+  autocmd FileType * let g:user_emmet_settings.indentation = '               '[:&tabstop]
+augroup END
+
