@@ -32,6 +32,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'jason0x43/vim-js-indent'
+Plugin 'leafgarland/typescript-vim'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
@@ -109,7 +111,11 @@ nmap <F8> :TagbarToggle<CR>
 au FileType html setl sw=2 sts=2 et
 
 "js
-au FileType javascript setl sw=2 sts=2 et
+au FileType javascript setl sw=4 sts=4 et
+au FileType typescript setl sw=4 sts=4 et
+
+"yaml
+au FileType yaml setl ts=2 sw=2 sts=2 et
 
 filetype plugin indent on
 syntax on
