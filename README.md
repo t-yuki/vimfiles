@@ -65,22 +65,20 @@ vim +"set filetype=go" +GoInstallBinaries +qall
 # vim +PluginUpdate +"set filetype=go" +GoUpdateBinaries +qall
 ```
 
-OBSOLUTED NOTE
----
-### Windows
-
-```shell
-git clone https://github.com/t-yuki/vimfiles %HOMEPATH%/_vim
-mklink %HOMEPATH%/vimfiles/_vimrc %HOMEPATH%/_vimrc
-go get -u -ldflags -H=windowsgui github.com/nsf/gocode
-go get -u -ldflags -H=windowsgui github.com/golang/lint/...
-
-git clone https://github.com/thinca/vim-quickrun %HOMEPATH%/_vim/vim-quickrun
+### For Neovim
+```
+export XDG_CONFIG_HOME=~/.config
+mkdir -p ~/.config
+ln -s ~/vimfiles/_vim ~/.config/nvim
+alias vi=nvim
+alias vim=nvim
 ```
 
-sendto: %APPDATA%\Microsoft\Windows\SendTo
-gvim -> gvim.exe -p
-gvimcli -> gvim.exe -p --remote-tab-silent
+### For GNU Screen
+```
+# requires 256 colors.
+ln -s ~/vimfiles/_screenrc ~/.screenrc
+```
 
 Refs (Japanese)
 ---------------

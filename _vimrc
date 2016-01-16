@@ -34,6 +34,7 @@ Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jason0x43/vim-js-indent'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'vim-airline/vim-airline'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
@@ -51,6 +52,13 @@ Plugin 'leafgarland/typescript-vim'
 call vundle#end()            " required
 """""""
 
+"""""""
+" colors
+colorscheme peachpuff
+
+" airline
+set laststatus=2
+
 ""quickrun
 let g:quickrun_config={'*': {'split': ':botright 4sp'}}
 "let g:quickrun_config.go={'command': 'go', 'exec': ['go test -v']}
@@ -60,7 +68,11 @@ let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 "let g:go_auto_type_info = 1
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 """standard vim-go key bindings
 au FileType go nmap <Leader>s <Plug>(go-implements)
@@ -111,8 +123,8 @@ nmap <F8> :TagbarToggle<CR>
 au FileType html setl sw=2 sts=2 et
 
 "js
-au FileType javascript setl sw=4 sts=4 et
-au FileType typescript setl sw=4 sts=4 et
+au FileType javascript setl sw=2 sts=2 et
+au FileType typescript setl sw=2 sts=2 et
 
 "yaml
 au FileType yaml setl ts=2 sw=2 sts=2 et

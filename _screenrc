@@ -1,0 +1,6 @@
+# see also: http://www.robmeerman.co.uk/unix/256colours
+# test: perl 256colors2.pl; vim "+runtime syntax/colortest.vim"
+attrcolor b ".I"
+defbce on
+term "screen-256color"
+termcapinfo xterm* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
